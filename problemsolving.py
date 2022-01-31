@@ -1,56 +1,73 @@
-#problem solving steps
-    #a.	Go to computer
-    #b.	Open vs code
-    #c.	Create new python file
-    #d.	Write code that takes in string
-    #e.	Open search engine
-            #i.	Google ”how to ~insert problem here~ python”
-            #ii. Find best example that works for you
-    # f.Test results in vs code
-            # i. Write code that research returned
-            # ii. Print to console
-            # iii. Debug (if necessary)
-            # iv. Test code
-    # v.Save
-
 #Reverse a string
-def reverse_string():
-    txt = input('Type a word or two!: ') [::-1]
-    print(txt)
-reverse_string()
+# def reverse_string():
+#         word = 'mickey'
+#         reversed_word = ''
+#         for index in range(len(word) -1, -1, -1):
+#                 reversed_word += word[index]
+#         print(reversed_word)
+# reverse_string()
 
 #capitalize letter
-def capitalize_every_word():
-    words = input('type some words!: ')
-    some_words = words.title()
-    print(some_words)
-capitalize_every_word()
-    
-
-# #compress a string of characters
-string = input('please input string you would like compressed: ')
-def compress(string):
-    index = 0
-    compressed = ''
-    len_str = len(string)
-    while index != len_str:
-        count = 1
-        while (index < len_str-1) and (string[index] == string[index+1]):
-            count = count + 1
-            index = index +1
-        if count ==1:
-            compressed += str(string[index])
-        else:
-            compressed += str(string[index]) + str(count)
-        index = index + 1
-    return compressed
-print(compress(string))
-
-#BONUS Palindrome
+# def capitalize_every_word():
+#         words = input('type some words!: ')
+#         last_character = " "
+#         new_string = ""
+#         for character in words:
+#                 if last_character == " ":
+#                         new_string += character.upper()
+#                         last_character = character
+#                 elif last_character != " ":
+#                         new_string += character
+#                         last_character = character
+#         return new_string
+        
 
 
+# result = capitalize_every_word()
+# print(result)
+
+# #compress a string of charactersJ
+# string = input('please input string you would like compressed: ')
+# def compress(string):
+#     index = 0
+#     compressed = ''
+#     len_str = len(string)
+#     while index != len_str:
+#         count = 1
+#         while (index < len_str-1) and (string[index] == string[index+1]):
+#             count = count + 1
+#             index = index +1
+#         if count ==1:
+#             compressed += str(string[index])
+#         else:
+#             compressed += str(string[index]) + str(count)
+#         index = index + 1
+#     return compressed
+# print(compress(string))
+
+# # #BONUS Palindrome
+# def palindrome():
+#         test_word = 'madam'
+#         if test_word == test_word [::-1]:
+#                 print('you found one!')
+#         else:
+#                 print('that is not one :(')
+# palindrome()
 
 
 
 
-
+def compress_a_string(string):
+        new_string = ""
+        current_count = 0
+        last_character = string[0]
+        for character in string:
+                if character == last_character:
+                        current_count += 1
+                else:
+                        new_string += str(current_count) + last_character
+                        current_count = 1
+                        last_character = character
+        new_string += str(current_count) + last_character
+        print(new_string)
+compress_a_string("aaaabbbbccccdddd")
